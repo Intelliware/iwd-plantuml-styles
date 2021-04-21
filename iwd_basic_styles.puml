@@ -1,6 +1,7 @@
 @startuml
 !include https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/master/iwd_colours.puml
 !include <tupadr3/common>
+!include <tupadr3/font-awesome/user>
 
 skinparam defaultTextAlignment center
 skinparam wrapWidth 200
