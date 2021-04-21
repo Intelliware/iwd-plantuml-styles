@@ -26,9 +26,9 @@ skinparam rectangle<<no_border>> {
     shadowing false
 }
 
-!define IWD_SHAPE(shape_type,shape_name,shape_short_name,shape_sprite,shape_description,shape_stereotype,shape_style) shape_type "//<size:12><<shape_stereotype>></size>//\r**shape_name**\r<$shape_sprite>\r<size:12>shape_description</size>" as shape_short_name <<shape_style>>
+!define IWD_SHAPE(shape_type,shape_name,shape_short_name,shape_sprite,shape_description,shape_stereotype,shape_style) shape_type "//<size:12><<shape_stereotype>></size>//\r**shape_name**\r<shape_sprite>\r<size:12>shape_description</size>" as shape_short_name <<shape_style>>
 
-!define IWD_USER(_name, _shortName, _description) IWD_SHAPE("rectangle", _name, _shortName, user, _description, "User", "no_border")
+!define IWD_USER(_name, _shortName, _description) IWD_SHAPE("rectangle", _name, _shortName, $user, _description, "User", "no_border")
 
 
 @enduml
