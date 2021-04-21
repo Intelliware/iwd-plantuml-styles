@@ -1,0 +1,33 @@
+@startuml
+!include https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/master/iwd_colours.puml
+!include <tupadr3/common>
+
+skinparam defaultTextAlignment center
+skinparam wrapWidth 200
+
+skinparam Arrow {
+    Color $IWD_DARK_BLUE
+    FontColor $IWD_DARK_BLUE
+    FontSize 12
+}
+
+skinparam rectangle<<light>> {
+    FontColor $IWD_LIGHT_GREY
+    BackgroundColor transparent
+    BorderColor $IWD_LIGHT_GREY
+    shadowing false
+}
+
+skinparam rectangle<<no_border>> {
+    FontColor black
+    BackgroundColor #ffffff00
+    BorderColor transparent
+    shadowing false
+}
+
+!define IWD_SHAPE(shape_type,shape_name,shape_short_name,shape_sprite,shape_description,shape_stereotype,shape_style) shape_type "//<size:12><<shape_stereotype>></size>//\r**shape_name**\r<$shape_sprite>\r<size:12>shape_description</size>" as shape_short_name <<shape_style>>
+
+!define IWD_USER(_name, _shortName, _description) IWD_SHAPE("rectangle", _name, _shortName, user, _description, "User", "no_border")
+
+
+@enduml
