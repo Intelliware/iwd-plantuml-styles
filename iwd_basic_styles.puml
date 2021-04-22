@@ -26,9 +26,60 @@ skinparam rectangle<<no_border>> {
     shadowing false
 }
 
-!define IWD_SHAPE(shape_type,shape_name,shape_short_name,shape_sprite,shape_description,shape_stereotype,shape_style) shape_type "//<size:12><<shape_stereotype>></size>//\r**shape_name**\r<shape_sprite>\r<size:12>shape_description</size>" as shape_short_name <<shape_style>>
+skinparam node<<external>> {
+    FontColor black
+    BackgroundColor $IWD_SAND
+    BorderColor $IWD_DARK_GREY
+}
 
-!define IWD_USER(_name, _shortName, _description) IWD_SHAPE("rectangle", _name, _shortName, $user, _description, "User", "no_border")
+skinparam database<<iwd>> {
+    FontColor white
+    BackgroundColor $IWD_LIGHT_BLUE
+    BorderColor black
+}
 
+skinparam artifact<<iwd>> {
+    FontColor white
+    BackgroundColor $IWD_LIGHT_BLUE
+    BorderColor black
+}
+
+!function $formatShapeTechnology($technology)
+    !if ($technology != "")
+        !return "\r<size:12>[" + $technology + "]</size>"
+    !else
+        !return ""
+    !endif
+!endfunction
+
+!function $formatShapeStereotype($stereotype)
+    !if ($stereotype != "")
+        !return "//<size:12><<" + $stereotype + ">></size>//\r"
+    !else
+        !return ""
+    !endif
+!endfunction
+
+!function $formatShapeContents($name, $stereotype, $technology, $sprite, $description)
+    !if ($sprite == "") && ($description == "")
+        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" + $formatShapeTechnology($technology);
+    !elseif ($sprite != "") && ($description == "")
+        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" $formatShapeTechnology($technology) + "\r<" + $sprite + ">"
+    !elseif ($sprite == "") && ($description != "")
+        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" + $formatShapeTechnology($technology) + "\r\r<size:12>" + $description + "</size>"
+    !else
+        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" + $formatShapeTechnology($technology) + "\r<" + $sprite + ">\r<size:12>" + $description + "</size>"
+    !endif 
+!endfunction
+
+!define IWD_SHAPE($shape_type,$shape_name,$shape_short_name,$shape_technology,shape_sprite,shape_description,shape_stereotype,shape_style) $shape_type "$formatShapeContents($shape_name, shape_stereotype, $shape_technology, shape_sprite, shape_description)" as $shape_short_name <<shape_style>>
+
+!define IWD_USER(_name, _shortName, _description) IWD_SHAPE("rectangle", _name, _shortName, "", $user, _description, "User", "no_border")
+
+!define IWD_ARTIFACT(_name, _shortName, _technology, $sprite, _description, _artifactType) IWD_SHAPE("artifact", _name, _shortName, _technology, $sprite, _description, _artifactType, "iwd")
+
+!define IWD_DATABASE(_name, _shortName, _technology, $sprite, _description) IWD_SHAPE("database", _name, _shortName, _technology, $sprite, _description, "Database", "iwd")
+
+!define IWD_EXT_NODE(_name, _shortName, _technology, $sprite, _description) IWD_SHAPE("node", _name, _shortName, _technology, $sprite, _description, "External System", "external")
 
 @enduml
