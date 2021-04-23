@@ -44,9 +44,21 @@ skinparam artifact<<iwd>> {
     BorderColor black
 }
 
+!function $formatShapeSprite($sprite)
+
+    !if (%substr($sprite, 0, 5) == "data:") 
+        !return "\n<img:" + $sprite + ">"
+    !elseif (%substr($sprite, 0, 1) == "<") 
+    !return "\n" + $sprite
+    !else
+        !return "\n<" + $sprite + ">"
+    !endif
+
+!endfunction
+
 !function $formatShapeTechnology($technology)
     !if ($technology != "")
-        !return "\r<size:12>[" + $technology + "]</size>"
+        !return "\n<size:12>[" + $technology + "]</size>"
     !else
         !return ""
     !endif
@@ -54,7 +66,7 @@ skinparam artifact<<iwd>> {
 
 !function $formatShapeStereotype($stereotype)
     !if ($stereotype != "")
-        !return "//<size:12><<" + $stereotype + ">></size>//\r"
+        !return "//<size:12><<" + $stereotype + ">></size>//\n"
     !else
         !return ""
     !endif
@@ -62,13 +74,13 @@ skinparam artifact<<iwd>> {
 
 !function $formatShapeContents($name, $stereotype, $technology, $sprite, $description)
     !if ($sprite == "") && ($description == "")
-        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" + $formatShapeTechnology($technology);
+        !return $formatShapeStereotype($stereotype) + "==" + $name + $formatShapeTechnology($technology);
     !elseif ($sprite != "") && ($description == "")
-        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" $formatShapeTechnology($technology) + "\r<" + $sprite + ">"
+        !return $formatShapeStereotype($stereotype) + "==" + $name + $formatShapeTechnology($technology) + $formatShapeSprite($sprite)
     !elseif ($sprite == "") && ($description != "")
-        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" + $formatShapeTechnology($technology) + "\r\r<size:12>" + $description + "</size>"
+        !return $formatShapeStereotype($stereotype) + "==" + $name + $formatShapeTechnology($technology) + "\n\n<size:12>" + $description + "</size>"
     !else
-        !return $formatShapeStereotype($stereotype) + "**" + $name + "**" + $formatShapeTechnology($technology) + "\r<" + $sprite + ">\r<size:12>" + $description + "</size>"
+        !return $formatShapeStereotype($stereotype) + "==" + $name + $formatShapeTechnology($technology) + $formatShapeSprite($sprite) + "\n<size:12>" + $description + "</size>"
     !endif 
 !endfunction
 
