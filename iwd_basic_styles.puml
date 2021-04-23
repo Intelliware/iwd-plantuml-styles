@@ -56,9 +56,9 @@ skinparam artifact<<iwd>> {
 
 !endfunction
 
-!function $formatShapeTechnology($technology)
+!function $formatShapeTechnology($technology, size = 12)
     !if ($technology != "")
-        !return "\n<size:12>[" + $technology + "]</size>"
+        !return '\n<size:' + size + '>[' + $technology + ']</size>'
     !else
         !return ""
     !endif
@@ -84,13 +84,19 @@ skinparam artifact<<iwd>> {
     !endif 
 !endfunction
 
+!unquoted procedure IwdArrow($from, $to, $label, $techn="", $direction="")
+$from -$direction->> $to : "**$label** $formatShapeTechnology($techn, 10)"
+!endprocedure
+
 !define IWD_SHAPE($shape_type,$shape_name,$shape_short_name,$shape_technology,shape_sprite,shape_description,shape_stereotype,shape_style) $shape_type "$formatShapeContents($shape_name, shape_stereotype, $shape_technology, shape_sprite, shape_description)" as $shape_short_name <<shape_style>>
 
 !define IWD_USER(_name, _shortName, _description) IWD_SHAPE("rectangle", _name, _shortName, "", $user, _description, "User", "no_border")
 
 !define IWD_ARTIFACT(_name, _shortName, _technology, $sprite, _description, _artifactType) IWD_SHAPE("artifact", _name, _shortName, _technology, $sprite, _description, _artifactType, "iwd")
 
-!define IWD_DATABASE(_name, _shortName, _technology, $sprite, _description) IWD_SHAPE("database", _name, _shortName, _technology, $sprite, _description, "Database", "iwd")
+!unquoted procedure IwdDatabase(_name, _shortName, _technology, $sprite, _description) 
+IWD_SHAPE("database", _name, _shortName, _technology, $sprite, _description, "Database", "iwd")
+!endprocedure
 
 !define IWD_EXT_NODE(_name, _shortName, _technology, $sprite, _description) IWD_SHAPE("node", _name, _shortName, _technology, $sprite, _description, "External System", "external")
 
