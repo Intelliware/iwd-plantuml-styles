@@ -14,14 +14,14 @@ skinparam Arrow {
 
 skinparam rectangle<<light>> {
     FontColor $IWD_LIGHT_GREY
-    BackgroundColor transparent
+    BackgroundColor #ffffff00
     BorderColor $IWD_LIGHT_GREY
     shadowing false
 }
 
 skinparam node<<light>> {
     FontColor $IWD_LIGHT_GREY
-    BackgroundColor transparent
+    BackgroundColor #ffffff00
     BorderColor $IWD_LIGHT_GREY
     shadowing false
 }
@@ -29,7 +29,7 @@ skinparam node<<light>> {
 skinparam rectangle<<no_border>> {
     FontColor black
     BackgroundColor #ffffff00
-    BorderColor transparent
+    BorderColor #ffffff00
     shadowing false
 }
 
