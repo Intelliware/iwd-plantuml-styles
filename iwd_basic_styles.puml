@@ -96,12 +96,17 @@ IWD_SHAPE("rectangle", $name, $shortName, "", $user, $description, "User", "no_b
 
 !define IWD_ARTIFACT(_name, _shortName, _technology, $sprite, _description, _artifactType) IWD_SHAPE("artifact", _name, _shortName, _technology, $sprite, _description, _artifactType, "iwd")
 
+!unquoted procedure IwdArtifact($name, $shortName, $technology, $sprite, $description, $artifactType, $style = "iwd") 
+IWD_SHAPE("artifact", $name, $shortName, $technology, $sprite, $description, $artifactType, $style)
+!endprocedure
+
+
 !unquoted procedure  IwdIconOnly($name, $shortName, $sprite, $description = "", $stereotype = "") 
 IWD_SHAPE("rectangle", $name, $shortName, "", $sprite, $description, $stereotype, "no_border")
 !endprocedure
 
-!unquoted procedure IwdDatabase(_name, _shortName, _technology, $sprite, _description) 
-IWD_SHAPE("database", _name, _shortName, _technology, $sprite, _description, "Database", "iwd")
+!unquoted procedure IwdDatabase(_name, _shortName, _technology, $sprite, _description, $style = "iwd") 
+IWD_SHAPE("database", _name, _shortName, _technology, $sprite, _description, "Database", $style)
 !endprocedure
 
 !define IWD_EXT_NODE(_name, _shortName, _technology, $sprite, _description) IWD_SHAPE("node", _name, _shortName, _technology, $sprite, _description, "External System", "external")
