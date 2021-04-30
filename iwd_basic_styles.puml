@@ -45,6 +45,12 @@ skinparam database<<iwd>> {
     BorderColor black
 }
 
+skinparam folder<<iwd>> {
+    FontColor white
+    BackgroundColor $IWD_LIGHT_BLUE
+    BorderColor black
+}
+
 skinparam artifact<<iwd>> {
     FontColor white
     BackgroundColor $IWD_LIGHT_BLUE
@@ -120,6 +126,10 @@ IWD_SHAPE("database", _name, _shortName, _technology, $sprite, _description, "Da
 
 !unquoted procedure IwdNode($name, $shortName, $technology, $sprite, $description, $stereotype = "Server", $style = "iwd") 
 IWD_SHAPE("node", $name, $shortName, $technology, $sprite, $description, $stereotype, $style)
+!endprocedure
+
+!unquoted procedure IwdFolder($name, $shortName, $technology, $sprite, $description, $stereotype = "Server", $style = "iwd") 
+IWD_SHAPE("folder", $name, $shortName, $technology, $sprite, $description, $stereotype, $style)
 !endprocedure
 
 @enduml
