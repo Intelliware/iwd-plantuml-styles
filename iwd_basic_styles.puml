@@ -8,7 +8,7 @@ skinparam wrapWidth 200
 
 skinparam Arrow {
     Color $IWD_MEDIUM_GREY
-    FontColor $IWD_MEDIUM_BLUE
+    FontColor $IWD_MEDIUM_GREY
     FontSize 12
 }
 
