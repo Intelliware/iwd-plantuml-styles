@@ -118,4 +118,8 @@ IWD_SHAPE("database", _name, _shortName, _technology, $sprite, _description, "Da
 
 !define IWD_EXT_NODE(_name, _shortName, _technology, $sprite, _description) IWD_SHAPE("node", _name, _shortName, _technology, $sprite, _description, "External System", "external")
 
+!unquoted procedure IwdNode($name, $shortName, $technology, $sprite, $description, $stereotype = "Server", $style = "iwd") 
+IWD_SHAPE("node", $name, $shortName, $technology, $sprite, $description, $stereotype, $style)
+!endprocedure
+
 @enduml
