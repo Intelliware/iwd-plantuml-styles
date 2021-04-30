@@ -7,12 +7,19 @@ skinparam defaultTextAlignment center
 skinparam wrapWidth 200
 
 skinparam Arrow {
-    Color $IWD_DARK_BLUE
-    FontColor $IWD_DARK_BLUE
+    Color $IWD_MEDIUM_GREY
+    FontColor $IWD_MEDIUM_BLUE
     FontSize 12
 }
 
 skinparam rectangle<<light>> {
+    FontColor $IWD_LIGHT_GREY
+    BackgroundColor transparent
+    BorderColor $IWD_LIGHT_GREY
+    shadowing false
+}
+
+skinparam node<<light>> {
     FontColor $IWD_LIGHT_GREY
     BackgroundColor transparent
     BorderColor $IWD_LIGHT_GREY
