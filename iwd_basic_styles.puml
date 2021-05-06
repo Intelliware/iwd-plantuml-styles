@@ -114,8 +114,8 @@ IWD_SHAPE("artifact", $name, $shortName, $technology, $sprite, $description, $ar
 !endprocedure
 
 
-!unquoted procedure  IwdIconOnly($name, $shortName, $sprite, $description = "", $stereotype = "") 
-IWD_SHAPE("rectangle", $name, $shortName, "", $sprite, $description, $stereotype, "no_border")
+!unquoted procedure  IwdIconOnly($name, $shortName, $technology = "", $sprite = "", $description = "", $stereotype = "") 
+IWD_SHAPE("rectangle", $name, $shortName, $technology, $sprite, $description, $stereotype, "no_border")
 !endprocedure
 
 !unquoted procedure IwdDatabase(_name, _shortName, _technology, $sprite, _description, $style = "iwd") 
