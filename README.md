@@ -20,3 +20,10 @@ Instead, I prefer to think in terms of UML artifacts. While Brown is very clear 
 
 ![Container Diagram](./examples/container-diagram.png "Container Diagram")
 
+## Deployment Diagram
+
+In my opinion, the deployment diagram is the most useful type of diagram in UML; it's also a supplementary type of diagram for the C4 model.
+
+Deployment Diagrams show the relationship between containers (artifacts) and the infrastructure elements.
+
+![Simple Deployment Diagram](./examples/simple-deployment-diagram.png "Simple Deployment Diagram")

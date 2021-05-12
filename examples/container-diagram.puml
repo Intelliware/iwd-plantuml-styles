@@ -27,9 +27,9 @@ IwdRectangle("External Systems", "externalSystems", "", "", "", "", "light") {
 }
 
 
-IwdArrow(customer, adminUser, "", "HTTPS/Web", "[hidden]down")
+IwdArrow(customer, adminUser, "", "", "[hidden]down")
 IwdArrow(customer, app, "uses", "HTTPS/Web", "right")
-IwdArrow(adminUser, app, "uses", "", "right")
+IwdArrow(adminUser, app, "uses", "HTTPS/Web", "right")
 IwdArrow(external, legacy, "", "", "[hidden]down")
 IwdArrow(app, external, "invokes", "HTTPS/Rest", "right")
 IwdArrow(app, legacy, "invokes", "HTTPS/SOAP", "right")

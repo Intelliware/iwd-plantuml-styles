@@ -1,0 +1,58 @@
+@startuml
+!include https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/master/iwd_basic_styles.puml
+!include https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/master//icons/aws/aws-logo-sprite.puml
+
+skinparam node {
+    FontColor $IWD_MEDIUM_GREY
+    BackgroundColor transparent
+    BorderColor $IWD_MEDIUM_GREY
+}
+
+skinparam rectangle<<vpc>> {
+    FontColor $IWD_MEDIUM_LIGHT_GREY
+    BackgroundColor transparent
+    BorderColor $IWD_MEDIUM_LIGHT_GREY
+    roundcorner 20
+    shadowing false
+}
+
+title ==My Fine Application Deployment Diagram
+
+IwdRectangle("Users", "userGroup", "", "", "", "", "light") {
+
+    IwdUser("Customer", "customer", "The customer uses My Fine application to process the thing.")
+
+    IwdUser("Admin User", "adminUser", "The admin user uses My Fine application to change the values and toggle the switches. There are also reports to generate.")
+
+}
+
+IwdRectangle("Amazon Web Services", "aws", "", $aws, "", "Cloud Host", "light") {
+
+    IwdRectangle("Virtual Private Cloud", "vpc", "", "", "", "", "vpc") {
+
+    IwdNode("My Application Cluster", "ecsCluster", "ECS Cluster", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/aws/aws-ecs-iwd.png>, "", "", "light") {
+        IwdArtifact("My Fine Application", "app", "Moleculer Application", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/docker-container.png>, "My Fine application provides the access and does all the things. It also enables and simplifies.", "Docker Container")
+    }
+    
+    IwdDatabase("My Fine Database", "db", "AWS RDS for PostgreSQL", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/aws/aws-rds-iwd.png>, "My Fine database stores the all the data to do the thing.")
+
+    }
+}
+
+IwdRectangle("External Systems", "externalSystems", "", "", "", "", "light") {
+
+    IwdRectangle("External System Application", "external", "", "", "The external system does special things that My Fine Application can't do on its own.", "System", "external") 
+
+    IwdRectangle("Clunky Old Legacy System", "legacy", "", "", "The legacy system does one particular thing that is expensive to migrate to something newer. Nobody likes the legacy system, and the legacy system knows it. A very sad existence.", "System", "external") 
+}
+
+
+IwdArrow(customer, adminUser, "", "", "[hidden]down")
+IwdArrow(customer, app, "uses", "HTTPS/Web", "right")
+IwdArrow(adminUser, app, "uses", "HTTPS/Web", "right")
+IwdArrow(app, db, "persists data", "psql", "down")
+IwdArrow(external, legacy, "", "", "[hidden]down")
+IwdArrow(app, external, "invokes", "HTTPS/Rest", "right")
+IwdArrow(app, legacy, "invokes", "HTTPS/SOAP", "right")
+
+@enduml
