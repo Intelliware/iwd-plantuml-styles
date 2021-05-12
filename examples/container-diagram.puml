@@ -1,0 +1,40 @@
+@startuml
+!include https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/master/iwd_basic_styles.puml
+
+title ==My Fine Application Container Diagram
+
+IwdRectangle("Users", "userGroup", "", "", "", "", "light") {
+
+    IwdUser("Customer", "customer", "The customer uses My Fine application to process the thing.")
+
+    IwdUser("Admin User", "adminUser", "The admin user uses My Fine application to change the values and toggle the switches. There are also reports to generate.")
+
+}
+
+IwdRectangle("My Fine System", "overall-app", "", "", "", "", "exploded") {
+
+    IwdArtifact("My Fine Application", "app", "Moleculer Application", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/docker-container.png>, "My Fine application provides the access and does all the things. It also enables and simplifies.", "Docker Container")
+    
+    IwdDatabase("My Fine Database", "db", "PostgreSQL", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/postgresql.png>, "My Fine database stores the all the data to do the thing.")
+
+}
+
+IwdRectangle("External Systems", "externalSystems", "", "", "", "", "light") {
+
+    IwdRectangle("External System Application", "external", "", "", "The external system does special things that My Fine Application can't do on its own.", "System", "external") 
+
+    IwdRectangle("Clunky Old Legacy System", "legacy", "", "", "The legacy system does one particular thing that is expensive to migrate to something newer. Nobody likes the legacy system, and the legacy system knows it. A very sad existence.", "System", "external") 
+}
+
+
+IwdArrow(customer, adminUser, "", "HTTPS/Web", "[hidden]down")
+IwdArrow(customer, app, "uses", "HTTPS/Web", "right")
+IwdArrow(adminUser, app, "uses", "", "right")
+IwdArrow(external, legacy, "", "", "[hidden]down")
+IwdArrow(app, external, "invokes", "HTTPS/Rest", "right")
+IwdArrow(app, legacy, "invokes", "HTTPS/SOAP", "right")
+
+IwdArrow(app, db, "persists data", "psql", "down")
+
+
+@enduml
