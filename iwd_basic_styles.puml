@@ -33,7 +33,21 @@ skinparam rectangle<<no_border>> {
     shadowing false
 }
 
+skinparam rectangle<<exploded>> {
+    FontColor $IWD_MEDIUM_LIGHT_GREY
+    BackgroundColor transparent
+    BorderColor $IWD_MEDIUM_LIGHT_GREY
+    BorderStyle dashed
+    shadowing false
+}
+
 skinparam node<<external>> {
+    FontColor black
+    BackgroundColor $IWD_SAND
+    BorderColor $IWD_DARK_GREY
+}
+
+skinparam rectangle<<external>> {
     FontColor black
     BackgroundColor $IWD_SAND
     BorderColor $IWD_DARK_GREY
@@ -46,6 +60,12 @@ skinparam database<<iwd>> {
 }
 
 skinparam folder<<iwd>> {
+    FontColor white
+    BackgroundColor $IWD_LIGHT_BLUE
+    BorderColor black
+}
+
+skinparam rectangle<<iwd>> {
     FontColor white
     BackgroundColor $IWD_LIGHT_BLUE
     BorderColor black
@@ -87,7 +107,7 @@ skinparam artifact<<iwd>> {
 
 !function $formatShapeContents($name, $stereotype, $technology, $sprite, $description)
     !if ($sprite == "") && ($description == "")
-        !return $formatShapeStereotype($stereotype) + "==" + $name + $formatShapeTechnology($technology);
+        !return $formatShapeStereotype($stereotype) + "==" + $name + $formatShapeTechnology($technology)
     !elseif ($sprite != "") && ($description == "")
         !return $formatShapeStereotype($stereotype) + "==" + $name + $formatShapeTechnology($technology) + $formatShapeSprite($sprite)
     !elseif ($sprite == "") && ($description != "")
@@ -101,7 +121,7 @@ skinparam artifact<<iwd>> {
 $from -$direction->> $to : "**$label** $formatShapeTechnology($techn, 10)"
 !endprocedure
 
-!define IWD_SHAPE($shape_type,$shape_name,$shape_short_name,$shape_technology,shape_sprite,shape_description,shape_stereotype,shape_style) $shape_type "$formatShapeContents($shape_name, shape_stereotype, $shape_technology, shape_sprite, shape_description)" as $shape_short_name <<shape_style>>
+!define IWD_SHAPE($shape_type,$shape_name,$shape_short_name,$shape_technology,shape_sprite,shape_description,shape_stereotype,shape_style) $shape_type "$formatShapeContents($shape_name, shape_stereotype, $shape_technology, shape_sprite, shape_description)"  <<shape_style>> as $shape_short_name
 
 !unquoted procedure IwdUser($name, $shortName, $description) 
 IWD_SHAPE("rectangle", $name, $shortName, "", $user, $description, "User", "no_border")
@@ -130,6 +150,10 @@ IWD_SHAPE("node", $name, $shortName, $technology, $sprite, $description, $stereo
 
 !unquoted procedure IwdFolder($name, $shortName, $technology, $sprite, $description, $stereotype = "Server", $style = "iwd") 
 IWD_SHAPE("folder", $name, $shortName, $technology, $sprite, $description, $stereotype, $style)
+!endprocedure
+
+!unquoted procedure IwdRectangle($name, $shortName, $technology, $sprite, $description, $stereotype = "", $style = "iwd") 
+IWD_SHAPE("rectangle", $name, $shortName, $technology, $sprite, $description, $stereotype, $style)
 !endprocedure
 
 @enduml

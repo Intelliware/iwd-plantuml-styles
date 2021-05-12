@@ -1,0 +1,30 @@
+@startuml
+!include https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/master/iwd_basic_styles.puml
+
+title ==My Fine Application System Context Diagram
+
+IwdRectangle("Users", "userGroup", "", "", "", "", "light") {
+
+    IwdUser("Customer", "customer", "The customer uses My Fine application to process the thing.")
+
+    IwdUser("Admin User", "adminUser", "The admin user uses My Fine application to change the values and toggle the switches. There are also reports to generate.")
+
+}
+
+IwdRectangle("My Fine Application", "overall", "", "", "My Fine application provides the access and does all the things. It also enables and simplifies.", "System") 
+
+IwdRectangle("External Systems", "externalSystems", "", "", "", "", "light") {
+
+    IwdRectangle("External System Application", "external", "", "", "The external system does special things that My Fine Application can't do on its own.", "System", "external") 
+
+    IwdRectangle("Clunky Old Legacy System", "legacy", "", "", "The legacy system does one particular thing that is expensive to migrate to something newer. Nobody likes the legacy system, and the legacy system knows it. A very sad existence.", "System", "external") 
+}
+
+IwdArrow(customer, adminUser, "", "", "[hidden]down")
+IwdArrow(customer, overall, "uses", "", "right")
+IwdArrow(adminUser, overall, "uses", "", "right")
+IwdArrow(external, legacy, "", "", "[hidden]down")
+IwdArrow(overall, external, "invokes", "", "right")
+IwdArrow(overall, legacy, "invokes", "", "right")
+
+@enduml
