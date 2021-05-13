@@ -41,9 +41,9 @@ IwdRectangle("Amazon Web Services", "aws", "", $aws, "", "Cloud Host", "light") 
 
 IwdRectangle("External Systems", "externalSystems", "", "", "", "", "light") {
 
-    IwdRectangle("External System Application", "external", "", "", "The external system does special things that My Fine Application can't do on its own.", "System", "external") 
+    IwdNode("External System Application", "external", "", "", "The external system does special things that My Fine Application can't do on its own.", "System", "external") 
 
-    IwdRectangle("Clunky Old Legacy System", "legacy", "", "", "The legacy system does one particular thing that is expensive to migrate to something newer. Nobody likes the legacy system, and the legacy system knows it. A very sad existence.", "System", "external") 
+    IwdNode("Clunky Old Legacy System", "legacy", "", "", "The legacy system does one particular thing that is expensive to migrate to something newer. Nobody likes the legacy system, and the legacy system knows it. A very sad existence.", "System", "external") 
 }
 
 
