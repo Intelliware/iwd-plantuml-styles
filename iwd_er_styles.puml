@@ -1,0 +1,19 @@
+@startuml
+!include https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/master/iwd_colours.puml
+
+skinparam roundCorner 15
+
+skinparam Arrow {
+    Color $IWD_MEDIUM_GREY
+    FontColor $IWD_MEDIUM_GREY
+    FontSize 12
+}
+
+skinparam class {
+    BorderColor $IWD_DARK_BLUE
+    FontColor $IWD_DARK_BLUE
+    BackgroundColor #fcf6e4
+    FontSize 12
+    AttributeFontColor $IWD_DARK_GREY
+}
+@enduml
