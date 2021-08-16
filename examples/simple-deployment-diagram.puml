@@ -28,7 +28,7 @@ IwdRectangle("Users", "userGroup", "", "", "", "", "light") {
 
 IwdRectangle("Amazon Web Services", "aws", "", $aws, "", "Cloud Host", "light") {
 
-    IwdRectangle("Virtual Private Cloud", "vpc", "", "", "", "", "vpc") {
+    IwdRectangle("<img:../icons/aws/aws-vpc-cloud-iwd.png> Virtual Private Cloud", "vpc", "", "", "", "", "vpc") {
 
     IwdNode("My Application Cluster", "ecsCluster", "ECS Cluster", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/aws/aws-ecs-iwd.png>, "", "", "light") {
         IwdArtifact("My Fine Application", "app", "Moleculer Application", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/docker-container.png>, "My Fine application provides the access and does all the things. It also enables and simplifies.", "Docker Container")
