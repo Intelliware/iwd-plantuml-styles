@@ -71,6 +71,12 @@ skinparam rectangle<<iwd>> {
     BorderColor black
 }
 
+skinparam node<<iwd>> {
+    FontColor white
+    BackgroundColor $IWD_LIGHT_BLUE
+    BorderColor black
+}
+
 skinparam artifact<<iwd>> {
     FontColor white
     BackgroundColor $IWD_LIGHT_BLUE
