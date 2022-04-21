@@ -13,9 +13,9 @@ IwdRectangle("Users", "userGroup", "", "", "", "", "light") {
 
 IwdRectangle("My Fine System", "overall-app", "", "", "", "", "exploded") {
 
-    IwdArtifact("My Fine Application", "app", "Moleculer Application", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/docker-container.png>, "My Fine application provides the access and does all the things. It also enables and simplifies.", "Docker Container")
+    IwdArtifact("My Fine Application", "app", "Moleculer Application", <img:https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/main/icons/docker-container.png>, "My Fine application provides the access and does all the things. It also enables and simplifies.", "Docker Container")
     
-    IwdDatabase("My Fine Database", "db", "PostgreSQL", <img:https://github.com/Intelliware/iwd-plantuml-styles/raw/master/icons/postgresql.png>, "My Fine database stores the all the data to do the thing.")
+    IwdDatabase("My Fine Database", "db", "PostgreSQL", <img:https://raw.githubusercontent.com/Intelliware/iwd-plantuml-styles/main/icons/postgresql.png>, "My Fine database stores the all the data to do the thing.")
 
 }
 
