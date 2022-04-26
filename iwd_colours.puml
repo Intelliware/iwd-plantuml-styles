@@ -13,4 +13,66 @@
 !global $IWD_LIME = "#9AC73C"
 !global $IWD_AMBER = "#E9BD3B"
 !global $IWD_TEAL = "#33A6B2"
+
+' The 2022 revisions to the palette colours
+
+!global $IWD2_GREEN_BASE = "#A4C454"
+!global $IWD2_GREEN_1 = "#ECF1DA"
+!global $IWD2_GREEN_2 = "#DAE6B6"
+!global $IWD2_GREEN_3 = "#C7DB93"
+!global $IWD2_GREEN_4 = "#7B943E"
+!global $IWD2_GREEN_5 = "#526227"
+
+!global $IWD2_TEAL_BASE = "#5C90C8"
+!global $IWD2_TEAL_1 = "#DDE8F4"
+!global $IWD2_TEAL_2 = "#BCD2E8"
+!global $IWD2_TEAL_3 = "#9BBCDD"
+!global $IWD2_TEAL_4 = "#3D6CA0"
+!global $IWD2_TEAL_5 = "#28486B"
+
+!global $IWD2_RED_BASE = "#CD5E45"
+!global $IWD2_RED_1 = "#F3DED9"
+!global $IWD2_RED_2 = "#E9BDB3"
+!global $IWD2_RED_3 = "#DF9C8D"
+!global $IWD2_RED_4 = "#A5402A"
+!global $IWD2_RED_5 = "#6D2A1C"
+
+!global $IWD2_RED_BASE = "#CD5E45"
+!global $IWD2_RED_1 = "#F3DED9"
+!global $IWD2_RED_2 = "#E9BDB3"
+!global $IWD2_RED_3 = "#DF9C8D"
+!global $IWD2_RED_4 = "#A5402A"
+!global $IWD2_RED_5 = "#6D2A1C"
+
+!global $IWD2_PLUM_BASE = "#A7559F"
+!global $IWD2_PLUM_1 = "#ECDCEB"
+!global $IWD2_PLUM_2 = "#D9B9D8"
+!global $IWD2_PLUM_3 = "#C897C4"
+!global $IWD2_PLUM_4 = "#7D3E77"
+!global $IWD2_PLUM_5 = "#52294F"
+
+!global $IWD2_GREY_BASE = "#E7E6E6"
+!global $IWD2_GREY_1 = "#D0CECE"
+!global $IWD2_GREY_2 = "#AEABAB"
+!global $IWD2_GREY_3 = "#747070"
+!global $IWD2_GREY_4 = "#393838"
+!global $IWD2_GREY_5 = "#171616"
+
+!global $IWD2_DARK_BLUE_BASE = "#1D5294"
+!global $IWD2_DARK_BLUE_1 = "#BEDDFC"
+!global $IWD2_DARK_BLUE_2 = "#80BBF9"
+!global $IWD2_DARK_BLUE_3 = "#4A9BF7"
+!global $IWD2_DARK_BLUE_4 = "#123967"
+!global $IWD2_DARK_BLUE_5 = "#0B2849"
+
+!global $IWD2_LIGHT_BLUE_BASE = "#2C72CC"
+!global $IWD2_LIGHT_BLUE_1 = "#C8E2FB"
+!global $IWD2_LIGHT_BLUE_2 = "#94C7FA"
+!global $IWD2_LIGHT_BLUE_3 = "#63ABF8"
+!global $IWD2_LIGHT_BLUE_4 = "#1F5599"
+!global $IWD2_LIGHT_BLUE_5 = "#143D6E"
+
+!global $IWD2_AMBER_BASE = "#FFB400"
+
+
 @enduml
