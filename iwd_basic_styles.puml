@@ -29,7 +29,7 @@ skinparam node<<light>> {
 skinparam rectangle<<no_border>> {
     FontColor black
     BackgroundColor #ffffff00
-    BorderColor white
+    BorderColor #ffffff00
     shadowing false
 }
 
