@@ -7,8 +7,8 @@ skinparam defaultTextAlignment center
 skinparam wrapWidth 200
 
 skinparam Arrow {
-    Color $IWD_MEDIUM_GREY
-    FontColor $IWD_MEDIUM_GREY
+    Color $IWD3_MIDNIGHT
+    FontColor $IWD3_MIDNIGHT
     FontSize 12
 }
 
@@ -43,43 +43,43 @@ skinparam rectangle<<exploded>> {
 
 skinparam node<<external>> {
     FontColor black
-    BackgroundColor $IWD_SAND
+    BackgroundColor $IWD3_STONE
     BorderColor $IWD_DARK_GREY
 }
 
 skinparam rectangle<<external>> {
     FontColor black
-    BackgroundColor $IWD_SAND
-    BorderColor $IWD_DARK_GREY
+    BackgroundColor $IWD3_STONE
+    BorderColor $IWD3_MIDNIGHT
 }
 
 skinparam database<<iwd>> {
     FontColor white
-    BackgroundColor $IWD_LIGHT_BLUE
+    BackgroundColor $IWD3_SKY
     BorderColor black
 }
 
 skinparam folder<<iwd>> {
     FontColor white
-    BackgroundColor $IWD_LIGHT_BLUE
+    BackgroundColor $IWD3_SKY
     BorderColor black
 }
 
 skinparam rectangle<<iwd>> {
     FontColor white
-    BackgroundColor $IWD_LIGHT_BLUE
+    BackgroundColor $IWD3_SKY
     BorderColor black
 }
 
 skinparam node<<iwd>> {
     FontColor white
-    BackgroundColor $IWD_LIGHT_BLUE
+    BackgroundColor $IWD3_SKY
     BorderColor black
 }
 
 skinparam artifact<<iwd>> {
     FontColor white
-    BackgroundColor $IWD_LIGHT_BLUE
+    BackgroundColor $IWD3_SKY
     BorderColor black
 }
 

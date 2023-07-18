@@ -74,5 +74,34 @@
 
 !global $IWD2_AMBER_BASE = "#FFB400"
 
+' 2023 Brand revisions
+
+!global $IWD3_GREEN = "#6BCB77"
+!global $IWD3_GREEN_20 = "#E1F5E4"
+!global $IWD3_GREEN_40 = "#C4EAC9"
+!global $IWD3_GREEN_60 = "#A6E0AD"
+!global $IWD3_GREEN_80 = "#89D592"
+
+!global $IWD3_RED = "#FF6B6B"
+!global $IWD3_RED_20 = "#FFE1E1"
+!global $IWD3_RED_40 = "#FFC4C4"
+!global $IWD3_RED_60 = "#FFA6A6"
+!global $IWD3_RED_80 = "#FF8989"
+
+!global $IWD3_SKY = "#009ADE"
+!global $IWD3_SKY_20 = "#CCEBF8"
+!global $IWD3_SKY_40 = "#99D7F2"
+!global $IWD3_SKY_60 = "#66C2EB"
+!global $IWD3_SKY_80 = "#33AEE5"
+
+!global $IWD3_YELLOW_20 = "#FFF7D8"
+!global $IWD3_YELLOW_40 = "#FFEFB1"
+!global $IWD3_YELLOW_60 = "#FFE88B"
+!global $IWD3_YELLOW_80 = "#FFE064"
+
+!global $IWD3_CLOUD = "#F0F0F0"
+!global $IWD3_STONE = "#CFD2E4"
+!global $IWD3_MIDNIGHT = "#112D4E"
+
 
 @enduml
